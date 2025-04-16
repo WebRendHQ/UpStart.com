@@ -1,0 +1,1660 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Add a new container class for sections */
+.sectionContainer {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: rgba(245, 245, 240, 0.9);
+  border-bottom: 2px solid var(--blueprint-lines);
+  box-shadow: 0 3px 10px rgba(0, 51, 102, 0.05);
+  width: 100%;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo h1 {
+  font-size: 2rem;
+  color: var(--blueprint-text);
+  margin: 0;
+  font-weight: bold;
+}
+
+.logo p {
+  font-size: 0.9rem;
+  color: var(--blueprint-lines);
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav a {
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--blueprint-lines);
+  transition: width 0.3s ease;
+}
+
+.nav a:hover {
+  transform: translateY(-2px);
+}
+
+.nav a:hover::after {
+  width: 100%;
+  animation: gridLines 2s infinite ease-in-out;
+}
+
+.intro {
+  text-align: center;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.blueprintStats {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem auto;
+  max-width: 1200px;
+  width: 90%;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.statItem {
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid var(--blueprint-lines);
+  border-radius: 5px;
+  background-color: rgba(245, 245, 240, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 120px;
+  animation: blueprintHighlight 5s infinite ease-in-out;
+}
+
+.statItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 51, 102, 0.1);
+}
+
+.statNumber {
+  display: block;
+  font-size: 2.5rem;
+  color: var(--blueprint-text);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--blueprint-accent);
+}
+
+.featuredDevice {
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 1200px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.deviceBlueprint {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.deviceImage {
+  box-shadow: 0 5px 15px rgba(0, 51, 102, 0.1);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+  border: 1px solid var(--blueprint-lines);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  animation: blueprintFade 10s infinite ease-in-out;
+}
+
+.deviceImage:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 51, 102, 0.15);
+}
+
+.deviceContainer {
+  width: 240px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--blueprint-lines);
+  background-color: rgba(255, 255, 255, 0.5);
+  position: relative;
+}
+
+.deviceTop {
+  display: flex;
+  height: 120px;
+  border-bottom: 1px dashed var(--blueprint-lines);
+  padding: 10px;
+}
+
+.reservoir {
+  width: 100px;
+  height: 100px;
+  border: 1px solid var(--blueprint-lines);
+  border-radius: 5px;
+  background-color: rgba(26, 117, 255, 0.1);
+  margin-right: 10px;
+}
+
+.controlUnit {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.display {
+  flex: 2;
+  border: 1px solid var(--blueprint-lines);
+  margin-bottom: 10px;
+  background-color: rgba(26, 117, 255, 0.05);
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  height: 30px;
+}
+
+.button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--blueprint-lines);
+  border-radius: 50%;
+}
+
+.deviceBody {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-bottom: 1px dashed var(--blueprint-lines);
+}
+
+.processor {
+  height: 50px;
+  border: 1px solid var(--blueprint-lines);
+  background-color: rgba(26, 117, 255, 0.05);
+}
+
+.battery {
+  height: 70px;
+  border: 1px solid var(--blueprint-lines);
+  background-color: rgba(26, 117, 255, 0.05);
+}
+
+.deviceBottom {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.needle {
+  width: 10px;
+  height: 60px;
+  background-color: rgba(26, 117, 255, 0.2);
+  border: 1px solid var(--blueprint-lines);
+}
+
+.measurements {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.verticalMeasurement {
+  position: absolute;
+  width: 1px;
+  height: 120px;
+  border-left: 1px dashed var(--blueprint-lines);
+  top: 50%;
+  right: 20%;
+  transform: translateY(-50%);
+}
+
+.verticalMeasurement .dimension-text {
+  right: -30px;
+  top: 50%;
+  left: auto;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.annotations {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.annotation {
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+.annotationLine {
+  width: 40px;
+  height: 1px;
+  background-color: var(--blueprint-lines);
+  position: relative;
+}
+
+.annotationLine::before {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border: 1px solid var(--blueprint-lines);
+  border-radius: 50%;
+  background-color: rgba(26, 117, 255, 0.3);
+  top: -2px;
+  left: 0;
+}
+
+.annotationText {
+  font-size: 0.8rem;
+  color: var(--blueprint-text);
+  margin-left: 10px;
+  white-space: nowrap;
+}
+
+.deviceSpecs {
+  margin-top: 2rem;
+  padding: 1rem;
+  border-top: 1px solid var(--blueprint-lines);
+}
+
+.deviceSpecs h4 {
+  color: var(--blueprint-text);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.deviceSpecs h4::after {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 1px;
+  background-color: var(--blueprint-lines);
+  bottom: -5px;
+  left: -10%;
+}
+
+.deviceSpecs ul {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0.8rem;
+}
+
+.deviceSpecs li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+}
+
+.deviceSpecs li:hover {
+  transform: translateX(5px);
+  color: var(--blueprint-highlight);
+}
+
+.deviceSpecs li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--blueprint-lines);
+  font-weight: bold;
+}
+
+.timelineContainer {
+  margin: 3rem 0;
+  padding: 1rem 0;
+  position: relative;
+}
+
+.timelineContainer::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--blueprint-lines);
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.timeline {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.timelineItem {
+  text-align: center;
+  position: relative;
+  background-color: var(--background);
+  padding: 0 1rem;
+  animation: blueprintFade 6s infinite ease-in-out;
+  animation-delay: calc(var(--i, 0) * 1s);
+}
+
+.timelineDate {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--blueprint-text);
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--blueprint-lines);
+  border-radius: 5px;
+  background-color: rgba(245, 245, 240, 0.7);
+  display: inline-block;
+}
+
+.timelineContent {
+  margin-top: 1rem;
+}
+
+.timelineContent h3 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--blueprint-text);
+}
+
+.timelineContent p {
+  font-size: 0.9rem;
+  color: var(--blueprint-accent);
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.service {
+  padding: 1.5rem;
+  border: 1px solid var(--blueprint-lines);
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(var(--blueprint-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--blueprint-grid) 1px, transparent 1px);
+  background-size: 
+    var(--small-grid-size) var(--small-grid-size),
+    var(--small-grid-size) var(--small-grid-size);
+  opacity: 0.1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 51, 102, 0.1);
+}
+
+.service h3 {
+  color: var(--blueprint-text);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.service p {
+  position: relative;
+  z-index: 1;
+  line-height: 1.5;
+}
+
+.patentCategories {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.patentCategory {
+  padding: 1.5rem;
+  border: 1px solid var(--blueprint-lines);
+  background-color: rgba(255, 255, 255, 0.7);
+  position: relative;
+  animation: blueprintFade 7s infinite ease-in-out;
+}
+
+.patentCategory h3 {
+  color: var(--blueprint-text);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed var(--blueprint-lines);
+}
+
+.patentCategory ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.patentCategory li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.patentCategory li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--blueprint-lines);
+}
+
+.patentCount {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--blueprint-text);
+  color: white;
+  border-radius: 3px;
+}
+
+/* LinkedIn Integration Styles */
+.linkedInHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed var(--blueprint-lines);
+  width: 100%;
+}
+
+.linkedInCompanyInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.linkedInIcon {
+  animation: gridLines 4s infinite ease-in-out;
+}
+
+.linkedInCompanyInfo h3 {
+  font-size: 1.2rem;
+  color: var(--blueprint-text);
+  margin: 0;
+}
+
+.linkedInFollowers {
+  font-size: 0.9rem;
+  color: var(--blueprint-accent);
+}
+
+.linkedInFollowBtn {
+  padding: 0.5rem 1.5rem;
+  background-color: var(--blueprint-accent);
+  color: white;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.linkedInFollowBtn:hover {
+  background-color: var(--blueprint-highlight);
+  transform: translateY(-2px);
+}
+
+.linkedInFeed {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.linkedInPost {
+  padding: 1.5rem;
+  border: 1px solid var(--blueprint-lines);
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 1s ease-in-out;
+  width: 100%;
+}
+
+.linkedInPost:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 51, 102, 0.1);
+}
+
+.postHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.postAuthor {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.authorAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--blueprint-lines);
+}
+
+.authorInfo h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--blueprint-text);
+}
+
+.postDate {
+  font-size: 0.8rem;
+  color: var(--blueprint-accent);
+}
+
+.postContent {
+  margin-bottom: 1.5rem;
+}
+
+.postContent p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.postImage {
+  width: 100%;
+  margin-top: 1rem;
+  border: 1px solid var(--blueprint-lines);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.postStats {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(26, 117, 255, 0.2);
+}
+
+.postReactions {
+  display: flex;
+  gap: 1rem;
+}
+
+.postLikes, .postComments {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--blueprint-accent);
+}
+
+.linkedInApiNote {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px dashed var(--blueprint-accent);
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: var(--blueprint-text);
+  line-height: 1.5;
+}
+
+.contactForm {
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--blueprint-text);
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--blueprint-lines);
+  background-color: rgba(255, 255, 255, 0.7);
+  font-family: inherit;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--blueprint-highlight);
+  box-shadow: 0 0 0 2px rgba(0, 82, 204, 0.2);
+}
+
+.formGroup textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submitButton {
+  padding: 0.75rem 2rem;
+  background-color: var(--blueprint-text);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submitButton:hover {
+  background-color: var(--blueprint-highlight);
+  transform: translateY(-2px);
+}
+
+.submitButton:active {
+  transform: translateY(1px);
+}
+
+.footer {
+  margin-top: auto;
+  background-color: rgba(245, 245, 240, 0.9);
+  border-top: 2px solid var(--blueprint-lines);
+  padding: 2rem;
+  width: 100%;
+}
+
+.footerContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.footerLogo {
+  display: flex;
+  align-items: center;
+}
+
+.footerLogo h3 {
+  font-size: 1.5rem;
+  color: var(--blueprint-text);
+  margin: 0 0 0.5rem 0;
+}
+
+.footerLogo p {
+  color: var(--blueprint-lines);
+}
+
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footerLinks a {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.footerLinks a:hover {
+  transform: translateX(5px);
+}
+
+.footerAddress p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--blueprint-lines);
+  font-size: 0.9rem;
+  color: var(--blueprint-text);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Media queries for responsive layouts */
+@media (min-width: 1600px) {
+  .sectionContainer {
+    max-width: 1600px;
+    width: 85%;
+  }
+  
+  .intro {
+    max-width: 1400px;
+  }
+  
+  .blueprintStats {
+    max-width: 1400px;
+  }
+  
+  .services {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+  
+  .patentCategories {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+  
+  .linkedInFeed {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .logoContainer {
+    margin-bottom: 1rem;
+  }
+  
+  .nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .deviceBlueprint {
+    padding: 1rem;
+  }
+  
+  .blueprintStats {
+    flex-wrap: wrap;
+  justify-content: center;
+    gap: 1rem;
+  }
+  
+  .statItem {
+    min-width: 100px;
+    flex: 1 1 40%;
+  }
+  
+  .timeline {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .timelineContainer::before {
+    height: 100%;
+    width: 2px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .linkedInFeed {
+    gap: 1rem;
+  }
+  
+  .linkedInPost {
+    padding: 1rem;
+  }
+  
+  .postAuthor {
+    gap: 0.5rem;
+  }
+  
+  .authorAvatar {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .footerContent {
+    grid-template-columns: 1fr;
+  }
+}
+
+.linkedInStatusIndicator {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.loadingIndicator {
+  color: var(--blueprint-accent);
+  animation: pulse 1.5s infinite ease-in-out;
+  padding-left: 20px;
+  position: relative;
+}
+
+.loadingIndicator::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--blueprint-accent);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: rotate 1s linear infinite;
+}
+
+.apiStatus {
+  color: #2e7d32;
+  background-color: rgba(46, 125, 50, 0.1);
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(46, 125, 50, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.apiStatus::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #2e7d32;
+  border-radius: 50%;
+}
+
+.errorIndicator {
+  color: #d32f2f;
+  background-color: rgba(211, 47, 47, 0.1);
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(211, 47, 47, 0.3);
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+@keyframes rotate {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+.apiStatusDetails {
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  background-color: rgba(245, 245, 240, 0.8);
+  padding: 0.8rem;
+  border: 1px dashed var(--blueprint-lines);
+  border-radius: 4px;
+}
+
+.apiStatusItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.apiLabel {
+  font-size: 0.7rem;
+  color: var(--blueprint-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.apiValue {
+  font-family: var(--font-geist-mono);
+  font-size: 0.85rem;
+  color: var(--blueprint-text);
+}
+
+.apiActive {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.apiInactive {
+  color: #d32f2f;
+}
+
+.apiConfigNote {
+  font-size: 0.8rem;
+  color: var(--blueprint-accent);
+  padding-top: 0.8rem;
+  border-top: 1px dashed rgba(26, 117, 255, 0.2);
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.apiConfigNote code {
+  font-family: var(--font-geist-mono);
+  background-color: rgba(26, 117, 255, 0.05);
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+}
+
+.apiDocsLink {
+  margin-left: 0.5rem;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Additional LinkedIn styles */
+.linkedInContainer {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border: 1px solid var(--blueprint-lines);
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgba(0, 51, 102, 0.05);
+}
+
+.linkedInHeader {
+  display: flex;
+  justify-content: space-between;
+    align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px dashed var(--blueprint-lines);
+}
+
+.linkedInHeader h2 {
+  color: var(--blueprint-text);
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.lastUpdated {
+  font-size: 0.8rem;
+  color: var(--blueprint-accent);
+}
+
+.linkedInList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.linkedInItem {
+  padding: 1.2rem;
+  border: 1px solid var(--blueprint-lines);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.linkedInItem:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 51, 102, 0.1);
+}
+
+.linkedInLoading {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  color: var(--blueprint-accent);
+  font-style: italic;
+}
+
+.linkedInError {
+  padding: 1rem;
+  color: #d32f2f;
+  background-color: rgba(211, 47, 47, 0.1);
+  border: 1px solid rgba(211, 47, 47, 0.3);
+  border-radius: 5px;
+    text-align: center;
+  }
+
+.postLink {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  color: var(--blueprint-accent);
+  border: 1px solid var(--blueprint-accent);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.postLink:hover {
+  background-color: var(--blueprint-accent);
+  color: white;
+}
+
+/* Additional LinkedIn post styling */
+.postHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.postAuthor {
+  font-weight: bold;
+  color: var(--blueprint-text);
+}
+
+.postDate {
+  font-size: 0.8rem;
+  color: var(--blueprint-accent);
+}
+
+.postContent {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* Add support for grid layout on medium-sized screens */
+@media (min-width: 1200px) {
+  .linkedInFeed {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .linkedInPost {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .postContent {
+    flex: 1;
+  }
+}
+
+/* Preloader styles */
+.preloaderContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preloaderHidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.preloaderSvg {
+  width: 300px;
+  height: auto;
+}
+
+/* Enhanced hero section */
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: 95vh;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+  overflow: hidden;
+  margin-bottom: 0;
+  border-bottom: 3px solid rgba(26, 117, 255, 0.3);
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.heroVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  opacity: 0.7;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(
+    to bottom,
+    rgba(245, 245, 240, 0.7) 0%,
+    rgba(245, 245, 240, 0.8) 50%,
+    rgba(245, 245, 240, 0.95) 90%,
+    rgba(245, 245, 240, 1) 100%
+  );
+}
+
+.blueprintOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: 
+    linear-gradient(var(--blueprint-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--blueprint-grid) 1px, transparent 1px);
+  background-size: 
+    var(--small-grid-size) var(--small-grid-size),
+    var(--small-grid-size) var(--small-grid-size);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.heroContent {
+  width: 90%;
+  max-width: 1400px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 1.5s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+.heroTitle {
+  font-size: 5rem;
+  color: var(--blueprint-text);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  position: relative;
+  animation: fadeIn 1s ease-in-out;
+  text-shadow: 0 4px 15px rgba(255, 255, 255, 0.8), 0 2px 5px rgba(26, 117, 255, 0.3);
+  font-family: 'Exo 2', sans-serif;
+}
+
+.heroTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(26, 117, 255, 0.2), rgba(26, 117, 255, 0.8), rgba(26, 117, 255, 0.2));
+  box-shadow: 0 0 10px rgba(26, 117, 255, 0.5);
+  border-radius: 2px;
+}
+
+.heroSubtitle {
+  font-size: 1.8rem;
+  color: var(--blueprint-text);
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 900px;
+  animation: fadeIn 1.5s ease-in-out;
+  text-shadow: 0 1px 5px rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+
+.heroBlueprint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 2rem 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 51, 102, 0.1), 0 10px 20px rgba(26, 117, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 3rem;
+  animation: fadeIn 2s ease-in-out;
+  border: 1px solid rgba(26, 117, 255, 0.2);
+  overflow: hidden;
+}
+
+.heroBlueprint::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(26, 117, 255, 0.1), transparent 70%);
+  z-index: 0;
+}
+
+.heroBlueprintContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.heroBlueprintImage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  animation: fadeIn 2s ease-in-out;
+  border: 2px dashed var(--blueprint-lines);
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  transition: all 0.5s ease;
+  box-shadow: 0 10px 30px rgba(0, 51, 102, 0.05);
+}
+
+.heroBlueprintImage:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 51, 102, 0.1), 0 15px 30px rgba(26, 117, 255, 0.1);
+  border-color: rgba(26, 117, 255, 0.6);
+}
+
+.heroBlueprintImage img {
+  filter: drop-shadow(0 5px 15px rgba(0, 51, 102, 0.2));
+  transition: all 0.5s ease;
+}
+
+.heroBlueprintImage:hover img {
+  filter: drop-shadow(0 15px 35px rgba(0, 51, 102, 0.3));
+}
+
+.heroDetails {
+  animation: fadeIn 2.5s ease-in-out;
+}
+
+.heroDetails h2 {
+  font-size: 2.5rem;
+  color: var(--blueprint-text);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 1rem;
+  font-weight: 700;
+}
+
+.heroDetails h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(26, 117, 255, 0.8), rgba(26, 117, 255, 0.2));
+  border-radius: 2px;
+}
+
+.heroDetails p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  color: var(--blueprint-text);
+}
+
+.heroMetrics {
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem 0;
+  width: 100%;
+}
+
+.heroMetricItem {
+  text-align: center;
+  padding: 2rem;
+  border: 1px solid rgba(26, 117, 255, 0.2);
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.8);
+  flex: 1;
+  margin: 0 0.8rem;
+  animation: blueprintHighlight 5s infinite ease-in-out;
+  animation-delay: calc(var(--i, 0) * 0.5s);
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroMetricItem::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, rgba(26, 117, 255, 0.2), rgba(26, 117, 255, 0.8), rgba(26, 117, 255, 0.2));
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.heroMetricItem:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 51, 102, 0.1), 0 10px 15px rgba(26, 117, 255, 0.05);
+  border-color: rgba(26, 117, 255, 0.3);
+}
+
+.heroMetricItem:hover::before {
+  opacity: 1;
+}
+
+.heroMetricNumber {
+  display: block;
+  font-size: 4rem;
+  color: var(--blueprint-text);
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+  background: linear-gradient(135deg, var(--blueprint-text), #0052cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Exo 2', sans-serif;
+}
+
+.heroMetricLabel {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--blueprint-accent);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.heroAnnotation {
+  position: absolute;
+  font-size: 0.9rem;
+  color: var(--blueprint-accent);
+  padding: 0.4rem 0.8rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--blueprint-lines);
+  border-radius: 6px;
+  animation: fadeIn 3s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0, 51, 102, 0.1);
+  z-index: 5;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.heroAnnotation::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 1.5px;
+  background-color: var(--blueprint-lines);
+}
+
+.annotation1 {
+  top: 20%;
+  right: 5%;
+}
+
+.annotation1::before {
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+}
+
+.annotation2 {
+  bottom: 20%;
+  left: 5%;
+}
+
+.annotation2::before {
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+}
+
+.heroButton {
+  display: inline-block;
+  padding: 1.2rem 3rem;
+  background: linear-gradient(135deg, var(--blueprint-text), #0052cc);
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  border-radius: 50px;
+  animation: fadeIn 3s ease-in-out;
+  box-shadow: 0 10px 25px rgba(0, 51, 102, 0.2);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.5s ease;
+}
+
+.heroButton:hover {
+  background: linear-gradient(135deg, #0052cc, var(--blueprint-text));
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 51, 102, 0.3);
+}
+
+.heroButton:hover::before {
+  left: 100%;
+}
+
+.heroButton:active {
+  transform: translateY(1px);
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scrollIndicator:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+
+.scrollIndicator svg {
+  width: 30px;
+  height: 30px;
+  color: var(--blueprint-accent);
+  filter: drop-shadow(0 2px 5px rgba(26, 117, 255, 0.2));
+}
+
+.scrollText {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: var(--blueprint-text);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  40% {
+    transform: translateY(-20px) translateX(-50%);
+  }
+  60% {
+    transform: translateY(-10px) translateX(-50%);
+  }
+}
+
+/* Add these styles to your existing media queries */
+@media (max-width: 992px) {
+  .heroBlueprintContent {
+    grid-template-columns: 1fr;
+  }
+  
+  .heroMetrics {
+    flex-wrap: wrap;
+  }
+  
+  .heroMetricItem {
+    flex: 1 1 40%;
+    margin-bottom: 1.5rem;
+  }
+  
+  .heroTitle {
+    font-size: 3.5rem;
+    letter-spacing: 4px;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.5rem;
+  }
+  
+  .heroDetails h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.8rem;
+    letter-spacing: 3px;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.3rem;
+  }
+  
+  .heroMetricItem {
+    flex: 100%;
+    margin: 0 0 1.5rem 0;
+  }
+  
+  .heroBlueprint {
+    padding: 2rem 1.5rem;
+  }
+  
+  .heroButton {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .heroDetails h2 {
+    font-size: 1.8rem;
+  }
+  
+  .heroMetricNumber {
+    font-size: 3rem;
+  }
+}

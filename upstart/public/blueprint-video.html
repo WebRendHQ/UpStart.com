@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blueprint Animation</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #f5f5f0;
+    }
+    
+    .container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    
+    .blueprint-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(26, 117, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26, 117, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(rgba(26, 117, 255, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26, 117, 255, 0.3) 1px, transparent 1px);
+      background-size: 
+        5px 5px,
+        5px 5px,
+        20px 20px,
+        20px 20px;
+      background-position: -1px -1px;
+      animation: moveGrid 20s linear infinite;
+    }
+    
+    @keyframes moveGrid {
+      0% {
+        background-position: 0 0, 0 0, 0 0, 0 0;
+      }
+      100% {
+        background-position: 20px 20px, 20px 20px, 20px 20px, 20px 20px;
+      }
+    }
+    
+    .device {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+      height: 300px;
+      border: 2px solid rgba(26, 117, 255, 0.6);
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.7);
+      animation: pulse 5s infinite alternate;
+    }
+    
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 10px rgba(26, 117, 255, 0.3);
+      }
+      100% {
+        box-shadow: 0 0 30px rgba(26, 117, 255, 0.7);
+      }
+    }
+    
+    .device-screen {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      height: 80px;
+      border: 1.5px solid rgba(26, 117, 255, 0.6);
+      border-radius: 5px;
+      background-color: rgba(26, 117, 255, 0.1);
+    }
+    
+    .device-graph {
+      position: absolute;
+      bottom: 10px;
+      left: 5px;
+      right: 5px;
+      height: 30px;
+    }
+    
+    .graph-line {
+      stroke: rgba(26, 117, 255, 0.8);
+      stroke-width: 2;
+      fill: none;
+      animation: drawLine 3s infinite;
+    }
+    
+    @keyframes drawLine {
+      0% {
+        stroke-dashoffset: 200;
+      }
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+    
+    .controls {
+      position: absolute;
+      top: 120px;
+      left: 20px;
+      right: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .control-button {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(26, 117, 255, 0.6);
+      background-color: white;
+    }
+    
+    .component {
+      position: absolute;
+      border: 1.5px solid rgba(26, 117, 255, 0.6);
+      border-radius: 3px;
+      background-color: rgba(26, 117, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      color: rgba(0, 51, 102, 0.8);
+    }
+    
+    .reservoir {
+      top: 170px;
+      left: 20px;
+      right: 20px;
+      height: 40px;
+    }
+    
+    .battery {
+      top: 230px;
+      left: 20px;
+      width: 70px;
+      height: 30px;
+    }
+    
+    .processor {
+      top: 230px;
+      right: 20px;
+      width: 70px;
+      height: 30px;
+    }
+    
+    .measurement-line {
+      position: absolute;
+      border-top: 1px dashed rgba(26, 117, 255, 0.6);
+    }
+    
+    .horizontal-measure {
+      bottom: -30px;
+      left: 0;
+      right: 0;
+    }
+    
+    .vertical-measure {
+      top: 0;
+      bottom: 0;
+      left: -30px;
+      border-top: none;
+      border-left: 1px dashed rgba(26, 117, 255, 0.6);
+    }
+    
+    .floating-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .floating-element {
+      position: absolute;
+      border: 1px solid rgba(26, 117, 255, 0.4);
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 5px;
+      opacity: 0;
+      animation: float 10s infinite;
+    }
+    
+    .element1 {
+      top: 20%;
+      left: 20%;
+      width: 80px;
+      height: 80px;
+      animation-delay: 0s;
+    }
+    
+    .element2 {
+      top: 60%;
+      left: 15%;
+      width: 100px;
+      height: 60px;
+      animation-delay: 2s;
+    }
+    
+    .element3 {
+      top: 25%;
+      right: 15%;
+      width: 70px;
+      height: 70px;
+      animation-delay: 4s;
+    }
+    
+    .element4 {
+      top: 70%;
+      right: 20%;
+      width: 90px;
+      height: 50px;
+      animation-delay: 6s;
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      20%, 80% {
+        opacity: 0.5;
+        transform: translateY(0);
+      }
+    }
+    
+    .blueprint-text {
+      position: absolute;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      color: rgba(0, 51, 102, 0.8);
+      border: 1px solid rgba(26, 117, 255, 0.4);
+      padding: 3px 8px;
+      background-color: rgba(255, 255, 255, 0.7);
+      animation: fadeText 8s infinite;
+    }
+    
+    .text1 {
+      top: 30%;
+      left: 25%;
+      animation-delay: 1s;
+    }
+    
+    .text2 {
+      top: 65%;
+      left: 20%;
+      animation-delay: 3s;
+    }
+    
+    .text3 {
+      top: 35%;
+      right: 20%;
+      animation-delay: 5s;
+    }
+    
+    .text4 {
+      top: 75%;
+      right: 25%;
+      animation-delay: 7s;
+    }
+    
+    @keyframes fadeText {
+      0%, 100% {
+        opacity: 0;
+      }
+      20%, 80% {
+        opacity: 0.8;
+      }
+    }
+    
+    .stamp {
+      position: absolute;
+      top: 10%;
+      right: 10%;
+      transform: rotate(15deg);
+      border: 1px solid rgba(26, 117, 255, 0.6);
+      padding: 5px 10px;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      color: rgba(0, 51, 102, 0.8);
+      animation: stampFade 10s infinite;
+    }
+    
+    @keyframes stampFade {
+      0%, 100% {
+        opacity: 0.2;
+      }
+      50% {
+        opacity: 0.8;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="blueprint-grid"></div>
+    
+    <div class="floating-elements">
+      <div class="floating-element element1"></div>
+      <div class="floating-element element2"></div>
+      <div class="floating-element element3"></div>
+      <div class="floating-element element4"></div>
+      
+      <div class="blueprint-text text1">COMPONENT A</div>
+      <div class="blueprint-text text2">MODULE B</div>
+      <div class="blueprint-text text3">SENSOR</div>
+      <div class="blueprint-text text4">PROCESSOR</div>
+    </div>
+    
+    <div class="device">
+      <div class="device-screen">
+        <svg class="device-graph" viewBox="0 0 100 30">
+          <polyline 
+            class="graph-line" 
+            points="0,15 10,10 20,20 30,5 40,25 50,10 60,15 70,5 80,20 90,10 100,15"
+            stroke-dasharray="200"
+            stroke-dashoffset="200"
+          />
+        </svg>
+      </div>
+      <div class="controls">
+        <div class="control-button"></div>
+        <div class="control-button"></div>
+        <div class="control-button"></div>
+        <div class="control-button"></div>
+      </div>
+      <div class="component reservoir">INSULIN RESERVOIR</div>
+      <div class="component battery">BATTERY</div>
+      <div class="component processor">PROCESSOR</div>
+      
+      <div class="measurement-line horizontal-measure"></div>
+      <div class="measurement-line vertical-measure"></div>
+    </div>
+    
+    <div class="stamp">PATENT PENDING</div>
+  </div>
+</body>
+</html> 

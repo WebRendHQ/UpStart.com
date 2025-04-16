@@ -1,0 +1,32 @@
+<svg width="300" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#003366" />
+      <stop offset="100%" stop-color="#0052cc" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Company Name -->
+  <text x="150" y="40" font-family="Exo 2, Arial, sans-serif" font-size="28" font-weight="600" fill="url(#textGradient)" text-anchor="middle">
+    UPSTART ENGINEERING
+  </text>
+  
+  <!-- Loading Bar Background -->
+  <rect x="50" y="60" width="200" height="6" rx="3" fill="#E0E0E0" />
+  
+  <!-- Loading Bar Progress -->
+  <rect x="50" y="60" width="0" height="6" rx="3" fill="url(#textGradient)">
+    <animate 
+      attributeName="width" 
+      values="0;200" 
+      dur="2s" 
+      repeatCount="1"
+      fill="freeze"
+    />
+  </rect>
+  
+  <!-- Loading Text -->
+  <text x="150" y="85" font-family="Exo 2, Arial, sans-serif" font-size="12" fill="#666" text-anchor="middle">
+    LOADING...
+  </text>
+</svg> 

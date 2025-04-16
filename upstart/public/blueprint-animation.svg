@@ -1,0 +1,122 @@
+<svg width="100%" height="100%" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Blueprint grid background -->
+  <defs>
+    <pattern id="smallGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(26, 117, 255, 0.15)" stroke-width="0.5"/>
+    </pattern>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="url(#smallGrid)"/>
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(26, 117, 255, 0.3)" stroke-width="1"/>
+    </pattern>
+    
+    <!-- Animation definition -->
+    <linearGradient id="fadeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(26, 117, 255, 0.05)">
+        <animate attributeName="stop-color" 
+          values="rgba(26, 117, 255, 0.05); rgba(26, 117, 255, 0.2); rgba(26, 117, 255, 0.05)" 
+          dur="10s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="rgba(26, 117, 255, 0.2)">
+        <animate attributeName="stop-color" 
+          values="rgba(26, 117, 255, 0.2); rgba(26, 117, 255, 0.05); rgba(26, 117, 255, 0.2)" 
+          dur="10s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+    
+    <!-- Pulse effect -->
+    <radialGradient id="pulseGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="rgba(26, 117, 255, 0.3)" />
+      <stop offset="100%" stop-color="rgba(26, 117, 255, 0)">
+        <animate attributeName="offset" values="0.7;0.9;0.7" dur="3s" repeatCount="indefinite" />
+      </stop>
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="white" />
+  
+  <!-- Blueprint grid -->
+  <rect width="100%" height="100%" fill="url(#grid)" />
+  
+  <!-- Animated elements -->
+  <g>
+    <!-- Medical device outline with animation -->
+    <rect x="400" y="150" width="200" height="300" rx="10" ry="10" fill="white" stroke="rgba(26, 117, 255, 0.6)" stroke-width="2">
+      <animate attributeName="stroke-opacity" values="0.4;0.9;0.4" dur="6s" repeatCount="indefinite" />
+    </rect>
+    
+    <!-- Circular pulse elements -->
+    <circle cx="500" cy="300" r="50" fill="url(#pulseGradient)" opacity="0.5">
+      <animate attributeName="r" values="100;200;100" dur="8s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Moving blueprint elements -->
+    <g>
+      <line x1="100" y1="100" x2="900" y2="100" stroke="rgba(26, 117, 255, 0.3)" stroke-width="1" stroke-dasharray="5,5">
+        <animate attributeName="y1" values="100;150;100" dur="15s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="100;150;100" dur="15s" repeatCount="indefinite" />
+      </line>
+      <line x1="100" y1="200" x2="900" y2="200" stroke="rgba(26, 117, 255, 0.3)" stroke-width="1" stroke-dasharray="5,5">
+        <animate attributeName="y1" values="200;250;200" dur="12s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="200;250;200" dur="12s" repeatCount="indefinite" />
+      </line>
+      <line x1="100" y1="300" x2="900" y2="300" stroke="rgba(26, 117, 255, 0.3)" stroke-width="1" stroke-dasharray="5,5">
+        <animate attributeName="y1" values="300;350;300" dur="18s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="300;350;300" dur="18s" repeatCount="indefinite" />
+      </line>
+      <line x1="100" y1="400" x2="900" y2="400" stroke="rgba(26, 117, 255, 0.3)" stroke-width="1" stroke-dasharray="5,5">
+        <animate attributeName="y1" values="400;450;400" dur="14s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="400;450;400" dur="14s" repeatCount="indefinite" />
+      </line>
+      <line x1="100" y1="500" x2="900" y2="500" stroke="rgba(26, 117, 255, 0.3)" stroke-width="1" stroke-dasharray="5,5">
+        <animate attributeName="y1" values="500;550;500" dur="20s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="500;550;500" dur="20s" repeatCount="indefinite" />
+      </line>
+    </g>
+    
+    <!-- Technical drawings that fade in and out -->
+    <g opacity="0.7">
+      <circle cx="200" cy="200" r="50" fill="none" stroke="rgba(26, 117, 255, 0.6)" stroke-width="1.5">
+        <animate attributeName="opacity" values="0.2;0.8;0.2" dur="10s" repeatCount="indefinite" />
+      </circle>
+      
+      <rect x="150" y="350" width="100" height="100" fill="none" stroke="rgba(26, 117, 255, 0.6)" stroke-width="1.5">
+        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="8s" repeatCount="indefinite" />
+      </rect>
+      
+      <polygon points="750,150 800,200 750,250 700,200" fill="none" stroke="rgba(26, 117, 255, 0.6)" stroke-width="1.5">
+        <animate attributeName="opacity" values="0.2;0.8;0.2" dur="12s" repeatCount="indefinite" />
+      </polygon>
+      
+      <ellipse cx="750" cy="400" rx="70" ry="50" fill="none" stroke="rgba(26, 117, 255, 0.6)" stroke-width="1.5">
+        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="15s" repeatCount="indefinite" />
+      </ellipse>
+    </g>
+    
+    <!-- Floating text labels -->
+    <g font-family="Arial" font-size="12" fill="rgba(0, 51, 102, 0.8)">
+      <text x="150" y="180" text-anchor="middle">
+        <animate attributeName="opacity" values="0;1;0" dur="10s" repeatCount="indefinite" />
+        COMPONENT A
+      </text>
+      
+      <text x="200" y="400" text-anchor="middle">
+        <animate attributeName="opacity" values="0;1;0" dur="8s" repeatCount="indefinite" begin="2s" />
+        MODULE B
+      </text>
+      
+      <text x="750" y="140" text-anchor="middle">
+        <animate attributeName="opacity" values="0;1;0" dur="12s" repeatCount="indefinite" begin="1s" />
+        SENSOR
+      </text>
+      
+      <text x="750" y="450" text-anchor="middle">
+        <animate attributeName="opacity" values="0;1;0" dur="15s" repeatCount="indefinite" begin="3s" />
+        PROCESSOR
+      </text>
+    </g>
+  </g>
+  
+  <!-- Overlay with gradient -->
+  <rect width="100%" height="100%" fill="url(#fadeGradient)" opacity="0.2" />
+</svg> 

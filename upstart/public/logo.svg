@@ -1,0 +1,45 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient for logo -->
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#003366" />
+      <stop offset="100%" stop-color="#0052cc" />
+    </linearGradient>
+    
+    <!-- Blueprint grid pattern (small) -->
+    <pattern id="smallGridPattern" width="4" height="4" patternUnits="userSpaceOnUse">
+      <path d="M 4 0 L 0 0 0 4" fill="none" stroke="rgba(26, 117, 255, 0.15)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  
+  <!-- Main logo shape - stylized "U" -->
+  <path d="M 20,10 L 20,35 Q 20,45 30,45 L 40,45 Q 50,45 50,35 L 50,10" 
+        fill="none" stroke="url(#logoGradient)" stroke-width="6" stroke-linecap="round" />
+  
+  <!-- E part of logo -->
+  <path d="M 60,10 L 60,45 M 60,10 L 80,10 M 60,27.5 L 75,27.5 M 60,45 L 80,45" 
+        fill="none" stroke="url(#logoGradient)" stroke-width="6" stroke-linecap="round" />
+  
+  <!-- Circle element representing precision and engineering -->
+  <circle cx="97" cy="27.5" r="15" fill="none" stroke="url(#logoGradient)" stroke-width="3" />
+  <circle cx="97" cy="27.5" r="7" fill="none" stroke="url(#logoGradient)" stroke-width="1.5" />
+  <line x1="97" y1="12.5" x2="97" y2="17.5" stroke="url(#logoGradient)" stroke-width="2" />
+  <line x1="97" y1="37.5" x2="97" y2="42.5" stroke="url(#logoGradient)" stroke-width="2" />
+  <line x1="82" y1="27.5" x2="87" y2="27.5" stroke="url(#logoGradient)" stroke-width="2" />
+  <line x1="107" y1="27.5" x2="112" y2="27.5" stroke="url(#logoGradient)" stroke-width="2" />
+  
+  <!-- Technical measurement marks -->
+  <rect x="115" y="10" width="10" height="35" fill="url(#smallGridPattern)" stroke="rgba(26, 117, 255, 0.3)" stroke-width="1" />
+  
+  <!-- Company name - Upstart -->
+  <text x="130" y="26" font-family="Exo 2, Arial, sans-serif" font-size="16" font-weight="600" fill="url(#logoGradient)">UPSTART</text>
+  
+  <!-- Company type - Engineering -->
+  <text x="130" y="42" font-family="Exo 2, Arial, sans-serif" font-size="13" font-weight="400" fill="rgba(0, 51, 102, 0.8)">ENGINEERING</text>
+  
+  <!-- Year established -->
+  <text x="178" y="15" font-family="Exo 2, Arial, sans-serif" font-size="6" fill="rgba(26, 117, 255, 0.8)" text-anchor="start">EST.2018</text>
+  
+  <!-- Subtle line element -->
+  <line x1="130" y1="30" x2="195" y2="30" stroke="rgba(26, 117, 255, 0.3)" stroke-width="0.5" stroke-dasharray="1,1" />
+</svg> 

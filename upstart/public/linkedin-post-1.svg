@@ -1,0 +1,64 @@
+<svg width="500" height="300" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with subtle gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0f4f8" />
+      <stop offset="100%" stop-color="#e1eeff" />
+    </linearGradient>
+    
+    <!-- Blueprint grid pattern -->
+    <pattern id="blueprintGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="none"/>
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(26, 117, 255, 0.15)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  
+  <!-- Main background -->
+  <rect width="500" height="300" fill="url(#bgGradient)"/>
+  <rect width="500" height="300" fill="url(#blueprintGrid)"/>
+  
+  <!-- Content area -->
+  <rect x="50" y="50" width="400" height="200" rx="10" fill="white" fill-opacity="0.8" stroke="rgba(26, 117, 255, 0.3)" stroke-width="1"/>
+  
+  <!-- Title bar -->
+  <rect x="50" y="50" width="400" height="40" rx="10" fill="rgba(26, 117, 255, 0.1)" stroke="rgba(26, 117, 255, 0.3)" stroke-width="1"/>
+  <text x="70" y="75" font-family="Arial" font-size="16" font-weight="bold" fill="#003366">Patent #72 Approved!</text>
+  
+  <!-- Blueprint/patent imagery -->
+  <g transform="translate(70, 110)">
+    <!-- Patent certificate outline -->
+    <rect x="0" y="0" width="120" height="120" fill="white" stroke="rgba(26, 117, 255, 0.6)" stroke-width="1"/>
+    <rect x="5" y="5" width="110" height="110" fill="none" stroke="rgba(26, 117, 255, 0.3)" stroke-width="0.5" stroke-dasharray="2,2"/>
+    
+    <!-- Patent contents suggestion -->
+    <text x="60" y="30" font-family="Arial" font-size="8" font-weight="bold" fill="#003366" text-anchor="middle">UNITED STATES PATENT</text>
+    <line x1="20" y1="40" x2="100" y2="40" stroke="rgba(26, 117, 255, 0.3)" stroke-width="0.5"/>
+    <line x1="20" y1="50" x2="100" y2="50" stroke="rgba(26, 117, 255, 0.3)" stroke-width="0.5"/>
+    <line x1="20" y1="60" x2="100" y2="60" stroke="rgba(26, 117, 255, 0.3)" stroke-width="0.5"/>
+    <line x1="20" y1="70" x2="100" y2="70" stroke="rgba(26, 117, 255, 0.3)" stroke-width="0.5"/>
+    
+    <!-- Patent seal -->
+    <circle cx="60" cy="95" r="15" fill="none" stroke="rgba(26, 117, 255, 0.6)" stroke-width="1"/>
+    <circle cx="60" cy="95" r="10" fill="none" stroke="rgba(26, 117, 255, 0.6)" stroke-width="0.5"/>
+    <path d="M 50,95 60,85 70,95 60,105 Z" fill="none" stroke="rgba(26, 117, 255, 0.6)" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Text content -->
+  <foreignObject x="210" y="100" width="220" height="130">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial; font-size: 12px; color: #003366; line-height: 1.4;">
+      <p style="margin: 0 0 10px 0; font-weight: bold;">Excited to announce our 72nd patent approval!</p>
+      <p style="margin: 0 0 10px 0;">Our innovative insulin delivery system is now officially patented, offering precise dosing based on real-time glucose monitoring.</p>
+      <p style="margin: 0;">This technology will help improve quality of life for millions of patients with diabetes worldwide.</p>
+    </div>
+  </foreignObject>
+  
+  <!-- Logo/branding element -->
+  <g transform="translate(380, 50)">
+    <rect x="0" y="0" width="70" height="40" rx="5" fill="rgba(0, 51, 102, 0.8)"/>
+    <text x="35" y="18" font-family="Arial" font-size="10" font-weight="bold" fill="white" text-anchor="middle">UPSTART</text>
+    <text x="35" y="30" font-family="Arial" font-size="8" fill="white" text-anchor="middle">ENGINEERING</text>
+  </g>
+  
+  <!-- Hashtags -->
+  <text x="70" y="230" font-family="Arial" font-size="10" fill="rgba(26, 117, 255, 0.8)">#PatentApproved #MedicalInnovation #DiabetesCare</text>
+</svg> 

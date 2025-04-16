@@ -1,0 +1,71 @@
+<svg width="500" height="300" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with subtle gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f2f7ff" />
+      <stop offset="100%" stop-color="#e6f0ff" />
+    </linearGradient>
+    
+    <!-- Blueprint grid pattern -->
+    <pattern id="blueprintGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="none"/>
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(26, 117, 255, 0.15)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  
+  <!-- Main background -->
+  <rect width="500" height="300" fill="url(#bgGradient)"/>
+  <rect width="500" height="300" fill="url(#blueprintGrid)"/>
+  
+  <!-- Content area -->
+  <rect x="50" y="50" width="400" height="200" rx="10" fill="white" fill-opacity="0.8" stroke="rgba(26, 117, 255, 0.3)" stroke-width="1"/>
+  
+  <!-- Title bar -->
+  <rect x="50" y="50" width="400" height="40" rx="10" fill="rgba(26, 117, 255, 0.1)" stroke="rgba(26, 117, 255, 0.3)" stroke-width="1"/>
+  <text x="70" y="75" font-family="Arial" font-size="16" font-weight="bold" fill="#003366">100th Device Shipped! 🎉</text>
+  
+  <!-- Milestone illustration -->
+  <g transform="translate(70, 100)">
+    <!-- Trophy -->
+    <path d="M 50 0 L 70 0 70 10 C 80 10 80 30 70 30 L 70 40 C 65 45 55 45 50 40 L 50 30 C 40 30 40 10 50 10 Z" fill="gold" stroke="#a17c00" stroke-width="1"/>
+    <rect x="55" y="40" width="10" height="15" fill="gold" stroke="#a17c00" stroke-width="1"/>
+    <rect x="45" y="55" width="30" height="5" rx="2" fill="gold" stroke="#a17c00" stroke-width="1"/>
+    
+    <!-- Number 100 -->
+    <g transform="translate(35, 70)">
+      <rect x="0" y="0" width="50" height="30" rx="5" fill="rgba(26, 117, 255, 0.2)" stroke="rgba(26, 117, 255, 0.5)" stroke-width="1"/>
+      <text x="25" y="22" font-family="Arial" font-size="18" font-weight="bold" fill="#003366" text-anchor="middle">100</text>
+    </g>
+    
+    <!-- Medical device icons -->
+    <g transform="translate(0, 70)">
+      <circle cx="10" cy="15" r="10" fill="white" stroke="rgba(26, 117, 255, 0.5)" stroke-width="1"/>
+      <path d="M 10 5 L 10 25 M 0 15 L 20 15" stroke="rgba(26, 117, 255, 0.8)" stroke-width="2"/>
+    </g>
+    
+    <g transform="translate(105, 70)">
+      <circle cx="10" cy="15" r="10" fill="white" stroke="rgba(26, 117, 255, 0.5)" stroke-width="1"/>
+      <path d="M 10 5 L 10 25 M 0 15 L 20 15" stroke="rgba(26, 117, 255, 0.8)" stroke-width="2"/>
+    </g>
+  </g>
+  
+  <!-- Text content -->
+  <foreignObject x="210" y="100" width="220" height="130">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial; font-size: 12px; color: #003366; line-height: 1.4;">
+      <p style="margin: 0 0 10px 0; font-weight: bold;">We've reached a major milestone!</p>
+      <p style="margin: 0 0 10px 0;">Our team has successfully shipped the 100th MicroPump insulin delivery device to clinics across the country.</p>
+      <p style="margin: 0 0 5px 0;">Thanks to our dedicated engineering team, manufacturing partners, and clinical advisors for making this possible.</p>
+      <p style="margin: 0; font-weight: bold;">Next target: 1,000 by year end!</p>
+    </div>
+  </foreignObject>
+  
+  <!-- Logo/branding element -->
+  <g transform="translate(380, 50)">
+    <rect x="0" y="0" width="70" height="40" rx="5" fill="rgba(0, 51, 102, 0.8)"/>
+    <text x="35" y="18" font-family="Arial" font-size="10" font-weight="bold" fill="white" text-anchor="middle">UPSTART</text>
+    <text x="35" y="30" font-family="Arial" font-size="8" fill="white" text-anchor="middle">ENGINEERING</text>
+  </g>
+  
+  <!-- Hashtags -->
+  <text x="70" y="230" font-family="Arial" font-size="10" fill="rgba(26, 117, 255, 0.8)">#Milestone #MedicalDevice #DiabetesInnovation</text>
+</svg> 

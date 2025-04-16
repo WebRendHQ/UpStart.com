@@ -1,0 +1,405 @@
+:root {
+  --background: #f5f5f0;
+  --foreground: #003366;
+  --blueprint-lines: rgba(26, 117, 255, 0.3);
+  --blueprint-grid: rgba(26, 117, 255, 0.15);
+  --blueprint-text: #003366;
+  --blueprint-highlight: #0052cc;
+  --blueprint-accent: rgba(26, 117, 255, 0.5);
+  --grid-size: 20px;
+  --small-grid-size: 5px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--blueprint-text);
+  background-color: var(--background);
+  background-image: 
+    linear-gradient(var(--blueprint-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--blueprint-grid) 1px, transparent 1px),
+    linear-gradient(var(--blueprint-lines) 1px, transparent 1px),
+    linear-gradient(90deg, var(--blueprint-lines) 1px, transparent 1px);
+  background-size: 
+    var(--small-grid-size) var(--small-grid-size),
+    var(--small-grid-size) var(--small-grid-size),
+    var(--grid-size) var(--grid-size),
+    var(--grid-size) var(--grid-size);
+  background-position: -1px -1px;
+  font-family: 'Exo 2', 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: var(--blueprint-highlight);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--foreground);
+}
+
+/* Blueprint animation */
+@keyframes blueprintFade {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+@keyframes gridLines {
+  0% { opacity: 0.3; }
+  50% { opacity: 0.5; }
+  100% { opacity: 0.3; }
+}
+
+@keyframes blueprintHighlight {
+  0% { box-shadow: 0 0 5px rgba(26, 117, 255, 0.3); }
+  50% { box-shadow: 0 0 15px rgba(26, 117, 255, 0.5); }
+  100% { box-shadow: 0 0 5px rgba(26, 117, 255, 0.3); }
+}
+
+.blueprint-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 3rem auto;
+  padding: 3rem;
+  background-color: rgba(245, 245, 240, 0.9);
+  border: 1px solid var(--blueprint-lines);
+  box-shadow: 0 15px 50px rgba(0, 51, 102, 0.08);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 2px;
+}
+
+.blueprint-container:hover {
+  box-shadow: 0 20px 60px rgba(0, 51, 102, 0.1);
+}
+
+.blueprint-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(var(--blueprint-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--blueprint-grid) 1px, transparent 1px);
+  background-size: 
+    var(--small-grid-size) var(--small-grid-size),
+    var(--small-grid-size) var(--small-grid-size);
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.blueprint-container::after {
+  content: "UPSTART ENGINEERING";
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: var(--blueprint-lines);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  opacity: 0.6;
+}
+
+.blueprint-title {
+  font-size: 2.8rem;
+  color: var(--blueprint-text);
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.blueprint-title::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(26, 117, 255, 0.2), rgba(26, 117, 255, 0.6), rgba(26, 117, 255, 0.2));
+  border-radius: 2px;
+}
+
+.blueprint-subtitle {
+  font-size: 2rem;
+  color: var(--blueprint-text);
+  border-bottom: 2px solid var(--blueprint-lines);
+  padding-bottom: 0.8rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.blueprint-device {
+  border: 2px solid var(--blueprint-lines);
+  background-color: rgba(245, 245, 240, 0.7);
+  padding: 2.5rem;
+  margin: 2.5rem 0;
+  position: relative;
+  animation: blueprintFade 5s infinite ease-in-out;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blueprint-device:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 51, 102, 0.1);
+}
+
+.blueprint-device::before {
+  content: "PATENT PENDING";
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 12px;
+  color: var(--blueprint-lines);
+  border: 1px solid var(--blueprint-lines);
+  padding: 5px 8px;
+  transform: rotate(15deg);
+  letter-spacing: 1px;
+  font-weight: 600;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.blueprint-device::after {
+  content: "72 PATENTS SECURED IN 2023";
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  font-size: 10px;
+  color: var(--blueprint-lines);
+  border-top: 1px dashed var(--blueprint-lines);
+  border-left: 1px dashed var(--blueprint-lines);
+  padding: 5px 10px;
+  opacity: 0.8;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.measurement-line {
+  position: relative;
+  border-top: 1px dashed var(--blueprint-lines);
+  margin: 15px 0;
+}
+
+.measurement-line::before,
+.measurement-line::after {
+  content: "";
+  position: absolute;
+  height: 8px;
+  border-left: 1px solid var(--blueprint-lines);
+}
+
+.measurement-line::before {
+  left: 0;
+  top: -4px;
+}
+
+.measurement-line::after {
+  right: 0;
+  top: -4px;
+}
+
+.dimension-text {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--background);
+  padding: 0 8px;
+  font-size: 12px;
+  color: var(--blueprint-lines);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.blueprint-stamp {
+  position: absolute;
+  font-size: 11px;
+  color: var(--blueprint-accent);
+  border: 2px solid var(--blueprint-accent);
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform: rotate(-20deg);
+  opacity: 0.8;
+  animation: gridLines 4s infinite ease-in-out;
+  box-shadow: 0 3px 10px rgba(26, 117, 255, 0.1);
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.blueprint-notes {
+  padding: 15px;
+  margin: 15px 0;
+  border-left: 3px solid var(--blueprint-lines);
+  font-size: 0.95rem;
+  background-color: rgba(245, 245, 240, 0.7);
+  position: relative;
+  border-radius: 0 4px 4px 0;
+}
+
+.blueprint-notes::before {
+  content: "ENGINEER NOTES:";
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  font-size: 11px;
+  background-color: var(--background);
+  padding: 0 8px;
+  color: var(--blueprint-accent);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.approval-stamp {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.8;
+}
+
+.approval-stamp::before {
+  content: "APPROVED";
+  color: var(--blueprint-accent);
+  font-size: 14px;
+  font-weight: bold;
+  border: 2px solid var(--blueprint-accent);
+  padding: 5px 12px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+}
+
+.approval-stamp::after {
+  content: "03/15/2024";
+  color: var(--blueprint-text);
+  font-size: 12px;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.section-reference {
+  color: var(--blueprint-accent);
+  font-size: 11px;
+  position: absolute;
+  font-family: monospace;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.section-reference.top-left {
+  top: 15px;
+  left: 15px;
+}
+
+.section-reference.top-right {
+  top: 15px;
+  right: 150px; /* Adjusted to avoid overlapping with UPSTART ENGINEERING text */
+}
+
+.section-reference.bottom-left {
+  bottom: 15px;
+  left: 15px;
+}
+
+.section-reference.bottom-right {
+  bottom: 15px;
+  right: 15px;
+}
+
+.blueprint-callout {
+  position: relative;
+  display: inline-block;
+  margin: 0 5px;
+  animation: gridLines 4s infinite ease-in-out;
+  font-weight: 600;
+  color: var(--blueprint-highlight);
+}
+
+.blueprint-callout::after {
+  content: attr(data-note);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(245, 245, 240, 0.95);
+  border: 1px solid var(--blueprint-lines);
+  color: var(--blueprint-text);
+  font-size: 12px;
+  padding: 5px 10px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  z-index: 10;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px rgba(0, 51, 102, 0.1);
+  font-weight: 500;
+}
+
+.blueprint-callout:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+@media (max-width: 768px) {
+  .blueprint-container {
+    padding: 2rem 1.5rem;
+  }
+  
+  .blueprint-title {
+    font-size: 2rem;
+  }
+  
+  .blueprint-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .blueprint-device {
+    padding: 1.5rem;
+  }
+}
